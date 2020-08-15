@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid19 tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous" defer></script>
+</head>
+
+<body>
+    <div class="container-fluid bg-danger text-center">
+        <div class="row">
+            <div class="col-md-12 p-3">
+                
+                <h1 class="heading">INDIA COVID19 tracker</h1>
+            </div>
+        </div>
+    </div><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4 col-sm-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Country:</p>
+                    </div>
+                    <div class="col-md-12">
+                        <h1>INDIA</h1>
+                    </div>
+                    <div class="col-md-12 mt-5">
+                        <p>Population:</p>
+                    </div>
+                    <div class="col-md-12">
+                        <h1 id="population"></h1>
+                    </div>
+                    <div class="col-md-12 mt-5 text-primary">
+                        <p>Last updated:</p>
+                    </div>
+                    <div class="col-md-12 text-primary">
+                        <h1 id="lastUpdated"></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Confirmed:</p>
+                    </div>
+                    <div class="col-md-12">
+                        <h1 id="confirmed"></h1>
+                    </div>
+                    <div class="col-md-12 mt-5 text-danger">
+                        <p>Deaths:</p>
+                    </div>
+                    <div class="col-md-12 text-danger">
+                        <h1 id="deaths"></h1>
+                    </div>
+                    <div class="col-md-12 mt-5 text-success">
+                        <p>Deaths percentage</p>
+                    </div>
+                    <div class="col-md-12 text-success">
+                        <h1 id="percent"></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="text-center mt-5">
+            <pre>created by <a href="https://github.com/nachiketjoshi19">nachiket joshi</a></pre>
+        </div>
+    </footer>
+</body>
+
+</html>

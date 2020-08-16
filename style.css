@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     user-select: none;
-    
 }
 body{
     min-height: 100vh;
@@ -34,7 +33,12 @@ footer{
 
 .rotation{
     animation: rotate 8s linear infinite;
-    animation-direction: alternate;
+    
+}
+.rotation1{
+    animation: rotate 8s linear infinite;
+    animation-direction: reverse;
+   
 }
 
 @keyframes rotate{

@@ -13,39 +13,51 @@ window.onload=function(){
 
 
 
-const population=document.getElementById('population');
+const totalCases=document.getElementById('totalCases')
 const lastUpdated=document.getElementById('lastUpdated');
-const confirmed=document.getElementById('confirmed');
+const activeCases=document.getElementById('activeCases');
+const activeNew=document.getElementById('activeNew');
 const deaths=document.getElementById('deaths');
+const deathsNew=document.getElementById('deathsNew');
 const percent=document.getElementById('percent');
+const recovered=document.getElementById('recovered');
+const recoveredNew=document.getElementById('recoveredNew');
 
 function getStats(){
-    fetch('https://coronavirus-tracker-api.herokuapp.com/v2/locations/143')
+    // fetch('https://coronavirus-tracker-api.herokuapp.com/v2/locations/143')
+    fetch('https://api.apify.com/v2/key-value-stores/toDWvRj1JpTXiM8FF/records/LATEST?disableRedirect=true')
     .then(function(res){
         return res.json();
     })
     .then(function(data){
-        
+        console.log(data);
 
-        let populationData = data.location.country_population.toLocaleString('en');
-        let lastUpdatedData = data.location.last_updated.substr(0, 10);
-        let confirmedData = data.location.latest.confirmed;
-        let deathsData = data.location.latest.deaths;
+        let totalCasesData = data.activeCases;
+        let activeCasesData = data.activeCases;
+        let activeNewData = data.activeCasesNew;
+        let recoveredData = data.recovered;
+        let recoveredNewData = data.recoveredNew;
+        let lastUpdatedData = data.lastUpdatedAtApify.substr(0, 10);
+        let deathsData = data.deaths;
+        let deathsNewData = data.deathsNew;
      
         
 
-        population.innerText=populationData;
+        // population.innerText=populationData;
         lastUpdated.innerText=lastUpdatedData;
-        confirmed.innerText=confirmedData.toLocaleString('en');
+        totalCases.innerText=totalCasesData.toLocaleString('en');
+        activeCases.innerText=activeCasesData.toLocaleString('en');
+        activeNew.innerText=activeNewData.toLocaleString('en');
+        recovered.innerText=recoveredData.toLocaleString('en');
+        recoveredNew.innerText=recoveredNewData.toLocaleString('en');
         deaths.innerText=deathsData.toLocaleString('en');
-        percent.innerText= ((Number(deathsData)/Number(confirmedData))*100).toLocaleString("en", {minimumFractionDigits: 2, maximumFractionDigits: 2}) + "%";
+        deathsNew.innerText=deathsNewData.toLocaleString('en');
+        percent.innerText= ((Number(deathsData)/Number(totalCasesData))*100).toLocaleString("en", {minimumFractionDigits: 2, maximumFractionDigits: 2}) + "%";
 
 
 
 
     })
-    .catch(function(){
-        console.log("error");
-    })
+    
     setTimeout(getStats,3600000)
 }

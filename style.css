@@ -45,3 +45,29 @@ footer{
         transform: rotate(360deg);
     }
 }
+
+::-webkit-scrollbar-track
+{
+	
+    background-color: rgb(187, 173, 173);
+    
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+    background-color: #F5F5F5;
+    
+    
+}
+
+::-webkit-scrollbar-thumb
+{
+
+    /* background-color: rgba(241, 25, 47, 0.89); */
+
+    background-image:-webkit-linear-gradient(90deg,rgba(184, 19, 36, 0.89), rgba(223, 25, 45, 0.89));
+  
+    
+	
+}

@@ -27,3 +27,21 @@ footer{
     width: 100%;
     font-size: 15px;
 }
+
+#lastUpdated{
+    font-size: 20px;
+}
+
+.rotation{
+    animation: rotate 8s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

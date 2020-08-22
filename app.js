@@ -87,6 +87,10 @@ function getStats() {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             }) + "%";
+          function scrollToTop() {
+            $(window).scrollTop(0);
+          }
+          scrollToTop();
         });
       }
     });

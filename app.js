@@ -11,7 +11,11 @@ const deathsNew = document.getElementById("deathsNew");
 const percent = document.getElementById("percent");
 const recovered = document.getElementById("recovered");
 const recoveredNew = document.getElementById("recoveredNew");
-
+const dropMenu = document.getElementById("dropMenu");
+const country = document.getElementById("country");
+const countryName = document.getElementById("countryName");
+const dropdownName = document.getElementById("dropdownName");
+const india = document.getElementById("india");
 function getStats() {
   // fetch('https://coronavirus-tracker-api.herokuapp.com/v2/locations/143')
   fetch(
@@ -42,14 +46,52 @@ function getStats() {
       deaths.innerText = deathsData.toLocaleString("en");
       deathsNew.innerText = deathsNewData.toLocaleString("en");
       percent.innerText =
-        (
-          (Number(deathsData) / Number(totalCasesData)) *
-          100
-        ).toLocaleString("en", {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2,
-        }) + "%";
+        ((Number(deathsData) / Number(totalCasesData)) * 100).toLocaleString(
+          "en",
+          {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          }
+        ) + "%";
+      dropdownName.innerText = "india";
+      country.innerHTML = "Country:";
+      countryName.innerHTML = "INDIA";
+      return data.regionData;
+    })
+    .then(function (data) {
+      for (let i = 0; i < data.length; i++) {
+        var newDropdown = document.createElement("a");
+        newDropdown.setAttribute("id", data[i].region);
+        newDropdown.innerText = data[i].region;
+        newDropdown.classList.add("dropdown-item");
+        dropMenu.appendChild(newDropdown);
+        console.log(data[i].region);
+        newDropdown.addEventListener("click", function () {
+          dropdownName.innerText = data[i].region;
+          activeCases.innerText = data[i].newInfected;
+          country.innerText = "Region";
+          countryName.innerText = data[i].region;
+
+          totalCases.innerText = data[i].totalInfected.toLocaleString("en");
+          activeCases.innerText = "-";
+          activeNew.innerText = data[i].newInfected.toLocaleString("en");
+          recovered.innerText = data[i].recovered.toLocaleString("en");
+          recoveredNew.innerText = data[i].newRecovered.toLocaleString("en");
+          deaths.innerText = data[i].deceased.toLocaleString("en");
+          deathsNew.innerText = data[i].newDeceased.toLocaleString("en");
+          percent.innerText =
+            (
+              (Number(data[i].deceased) / Number(data[i].totalInfected)) *
+              100
+            ).toLocaleString("en", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            }) + "%";
+        });
+      }
     });
 
   setTimeout(getStats, 3600000);
 }
+
+india.addEventListener("click", getStats);

@@ -2,6 +2,29 @@ window.onload = function () {
   getStats();
 };
 
+const darkMode= document.getElementById("customSwitches")
+let dark = 0
+darkMode.addEventListener('change',()=>{
+if (dark==0){
+  document.getElementById('body').classList.add('dark')
+  dark=1;
+  country.classList.add('text-white')
+  countryName.classList.add('text-white')
+  totalCases.classList.add('text-white')
+  document.getElementById('Tcases').classList.add('text-white')
+}
+else{
+  dark=0;
+  document.getElementById('body').classList.remove('dark')
+  country.classList.remove('text-white')
+  countryName.classList.remove('text-white')
+  totalCases.classList.remove('text-white')
+  document.getElementById('Tcases').classList.remove('text-white')
+
+}
+})
+
+
 const totalCases = document.getElementById("totalCases");
 const lastUpdated = document.getElementById("lastUpdated");
 const activeCases = document.getElementById("activeCases");
@@ -72,8 +95,8 @@ function getStats() {
           country.innerText = "Region";
           countryName.innerText = data[i].region;
 
-          totalCases.innerText = data[i].totalInfected.toLocaleString("en");
-          activeCases.innerText = "-";
+          totalCases.innerText = "-";
+          activeCases.innerText = data[i].totalInfected.toLocaleString("en");
           activeNew.innerText = data[i].newInfected.toLocaleString("en");
           recovered.innerText = data[i].recovered.toLocaleString("en");
           recoveredNew.innerText = data[i].newRecovered.toLocaleString("en");

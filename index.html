@@ -22,7 +22,7 @@
         defer></script>
 </head>
 
-<body>
+<body id="body">
     <div class="container-fluid bg-danger text-center">
         <div class="row">
             <div class="col-md-12 p-3">
@@ -30,6 +30,10 @@
                 <h1 class="heading" style="color:#ffc822">INDIA COVID19 tracker</h1>
             </div>
         </div>
+        <div class="custom-control custom-switch float-right">
+            <input type="checkbox" class="custom-control-input" id="customSwitches">
+            <label class="custom-control-label" for="customSwitches">dark mode</label>
+          </div>
     </div><br>
     <div class="container">
         <div class="row">
@@ -75,10 +79,10 @@
             <div class="col-md-4 col-sm-6 text-center">
                 <div class="row">
                     <div class="col-md-12">
-                        <p>Total cases:</p>
+                        <p id="Tcases">Total cases:</p>
                     </div>
                     <div class="col-md-12">
-                        <h1 style="color: #AAAAAA;" id="totalCases">vs</h1>
+                        <h1 style="color: #AAAAAA;" id="totalCases"></h1>
                     </div>
                     <div class="col-md-12 mt-5 text-warning">
                         <p>New active cases:</p>
@@ -114,7 +118,7 @@
             </div>
             <div class="col-md-12 text-center">
                 <div class="dropdown">
-                    <button id="dropdownName" class="btn btn-secondary dropdown-toggle" type="button"
+                    <button id="dropdownName" class="btn btn-danger dropdown-toggle" type="button"
                         id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         India
                     </button>

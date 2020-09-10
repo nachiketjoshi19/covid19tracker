@@ -5,10 +5,13 @@
 }
 body {
   min-height: 100vh;
+  transition: background 0.1s linear;
+
 }
 
 .dark{
   background: #000;
+  transition: background 0.1s linear;
 }
 .heading {
   letter-spacing: 5px;

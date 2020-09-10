@@ -12,6 +12,8 @@ if (dark==0){
   countryName.classList.add('text-white')
   totalCases.classList.add('text-white')
   document.getElementById('Tcases').classList.add('text-white')
+  document.getElementById('credits').classList.add('text-white')
+  darkLabel.classList.add('text-white')
 }
 else{
   dark=0;
@@ -19,12 +21,14 @@ else{
   country.classList.remove('text-white')
   countryName.classList.remove('text-white')
   totalCases.classList.remove('text-white')
+  darkLabel.classList.remove('text-white')
   document.getElementById('Tcases').classList.remove('text-white')
+  document.getElementById('credits').classList.remove('text-white')
 
 }
 })
 
-
+const darkLabel=document.getElementById('darkLabel')
 const totalCases = document.getElementById("totalCases");
 const lastUpdated = document.getElementById("lastUpdated");
 const activeCases = document.getElementById("activeCases");
